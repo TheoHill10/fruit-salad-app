@@ -17,11 +17,10 @@ function extractFruit(e){ //e is the placeholder for the thing submitted
 function addFruit(fruit, fruitImg){
     const li = document.createElement('li') //create an element
     const img = document.createElement('img')
-    img.src = fruitImg
+    img.src = fruitImg.hits[0].previewURL
 
-
-   // li.textContent = fruit.name //just the text inside it, innerHTML is a string of all the HTML. This is pulling out just the name part of the fruit object
-    
+    li.textContent = fruit.name //just the text inside it, innerHTML is a string of all the HTML. This is pulling out just the name part of the fruit object
+    li.appendChild(img)
 
     li.addEventListener('click', removeFruit) //works directly on the elemnts in the list.
     fruitList.appendChild(li) //appends items to the end of a list
